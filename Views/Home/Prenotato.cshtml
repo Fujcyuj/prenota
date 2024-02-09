@@ -1,0 +1,29 @@
+@model List<Utente>
+@{
+    ViewData["Title"] = "Prenotato";
+}
+
+<p>Grazie @Model[0].Nome per esserti registrato.<p>
+<p>Sono stati registrati @Model.Count() utenti.<p>
+
+<table class="table">
+    <tr>
+        <thead class = "thead-dark">
+            <tr>
+                <th>Nome</th>
+                <th>Cognome</th>
+                <th>Tipo</th>
+                <th>Email</th>
+            </tr>
+        <thead>
+    </tr>
+    @{foreach(var item in @Model){
+        <tr>
+            <td>@item.Nome</td>
+            <td>@item.Cognome</td>
+            <td>@item.Tipo</td>
+            <td>@item.Email</td>
+        </tr>
+        }
+    }
+</table>
